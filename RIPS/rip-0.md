@@ -9,7 +9,8 @@ created: 2026-09-08
 
 ## ¿Qué es una RIP?
 
-RIP corresponde a *Ruby Investment Proposal* (Propuesta de Inversión de Ruby). Una RIP es un documento formal de diseño y análisis que proporciona información a la comunidad de RUBY, o describe una nueva tesis de inversión, estrategia o asignación de cartera para el ecosistema. La RIP debe proporcionar una especificación técnica y cuantitativa rigurosa de la hipótesis financiera, los modelos de valoración, el análisis histórico y los parámetros de riesgo. El autor de la RIP es responsable de generar consenso dentro de la comunidad, incorporar revisiones por pares y defender la tesis antes de la votación comunitaria.
+RIP corresponde a *Ruby Investment Proposal* (Propuesta de Inversión de Ruby). Una RIP es un documento formal de diseño y análisis que proporciona información a la comunidad de RUBY, o describe una nueva tesis de inversión, estrategia o asignación de cartera para el ecosistema. La RIP debe proporcionar una especificación técnica y cuantitativa rigurosa de la hipótesis financiera, los modelos de valoración, el análisis histórico y los parámetros de riesgo. El autor de la RIP es responsable de generar consenso dentro de la comunidad, incorporar revisiones por pares y defender la tesis antes de la votación comunitaria. [RIP-0](https://github.com/therubyfoundation/RIPs/blob/main/RIPS/rip-0.md) gobierna como las RIPs deben ser publicadas, comunicadas y ejecutadas.
+
 
 ## Justificación de las RIP
 
