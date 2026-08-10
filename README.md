@@ -1,6 +1,6 @@
 # Ruby® Investment Proposals (RIPs)
 
-El objetivo de este repositorio es estandarizar, transparentar y elevar la calidad documental de todas las decisiones financieras del ecosistema **RUBY**. Este espacio funciona como el registro oficial y abierto para rastrear las propuestas de inversión (pasadas, en curso y futuras) estructuradas bajo las **Ruby Investment Proposals (RIPs)**.
+El objetivo de este repositorio es estandarizar, transparentar y elevar la calidad documental de todas las decisiones financieras del ecosistema **RUBY**. Este espacio funciona como el registro oficial y abierto para rastrear las propuestas de inversión (pasadas, en curso y futuras) estructuradas bajo las **Ruby Investment Proposals (RIPs)**. La [RIP-0](https://github.com/therubyfoundation/RIPs/blob/main/RIPS/rip-0.md) gobierna como las RIPs deben ser publicadas, comunicadas y ejecutadas.
 
 ---
 
