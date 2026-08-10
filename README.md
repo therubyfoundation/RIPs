@@ -1,0 +1,2 @@
+# RIPs
+Ruby® Investment Proposals
