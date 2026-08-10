@@ -33,7 +33,7 @@ Toda RIP cuantitativa que proponga la adquisición de un activo o una estrategia
 Las RIPs no deben depender únicamente de valoraciones puntuales. Cada propuesta debe incluir análisis estadísticos históricos y parámetros de *backtesting*:
 
 - **Medias Móviles (SMA y EMA):** Análisis de Medias Móviles Simples (por ejemplo, de 50 y 200 días) y Medias Móviles Exponenciales para determinar macro-tendencias y zonas de impulso de entrada y salida.
-- **Backtesting bajo Regímenes de Mercado:** Simulación del comportamiento histórico del activo frente a cambios macroeconómicos o de mercado específicos. Por ejemplo, si un activo muestra una alta correlación con el S&P 500 ($SPX$), la RIP debe modelar cómo se comportó el activo durante las caídas (*drawdowns*) o repuntes históricos del $SPX$ en horizontes de 30, 90 y 365 dias.
+- **Backtesting bajo Regímenes de Mercado:** Simulación del comportamiento histórico del activo frente a cambios macroeconómicos o de mercado específicos. Por ejemplo, si un activo muestra una alta correlación con el S&P 500, la RIP debe modelar cómo se comportó el activo durante las caídas (*drawdowns*) o repuntes históricos del S&P 500 en horizontes de 30, 90 y 365 dias.
 - **Matrices de Volatilidad y Correlación:** Cálculo histórico de la beta en relación con índices de referencia y métricas de duración de las caídas.
 
 ## Objetivos, Horizontes Temporales, Métricas de Rendimiento y Gestión de Riesgo Operativo
@@ -67,4 +67,3 @@ Toda propuesta de inversión debe definir claramente los siguientes parámetros 
 - **Modelos de Valoración:** Ejecución detallada del DCF y filtrado por múltiplos multivariable.
 - **Datos Estadísticos y de Backtesting:** Indicadores SMA/EMA, pruebas de correlación histórica, CAGR esperado y máximo *drawdown* proyectado.
 - **Objetivos y Gestión de Riesgos:** Precio objetivo, plazo temporal (máximo 2 años), reglas de *stop-loss* y *stop-win* sujetas a revisión comunitaria.
-- **Renuncia de Derechos de Autor:** `Copyright and related rights waived via [CC0](../LICENSE.md).`
