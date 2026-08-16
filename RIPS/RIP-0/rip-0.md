@@ -1,16 +1,17 @@
 ---
 rip: 0
-title: Propósito, Estándares y Directrices de Evaluación de Inversiones de las RIP
+title: Marco metodológico para la evaluación de activos
 status: Borrador (Draft)
 type: Estándar (Standards Track)
 category: Inversión (Investment)
-created: 2026-09-08
+created: 2026-08-16
 ---
+
+*Puedes consultar el documento normativo completo y detallado en el siguiente archivo PDF: [RIP-0: Marco metodológico para la evaluación de activos](./RIP_0.pdf).*
 
 ## ¿Qué es una RIP?
 
 RIP corresponde a *Ruby Investment Proposal* (Propuesta de Inversión de Ruby). Una RIP es un documento formal de diseño y análisis que proporciona información a la comunidad de RUBY, o describe una nueva tesis de inversión, estrategia o asignación de cartera para el ecosistema. La RIP debe proporcionar una especificación técnica y cuantitativa rigurosa de la hipótesis financiera, los modelos de valoración, el análisis histórico y los parámetros de riesgo. El autor de la RIP es responsable de generar consenso dentro de la comunidad, incorporar revisiones por pares y defender la tesis antes de la votación comunitaria.
-
 
 ## Justificación de las RIP
 
@@ -34,8 +35,16 @@ Toda RIP cuantitativa que proponga la adquisición de un activo o una estrategia
 Las RIPs no deben depender únicamente de valoraciones puntuales. Cada propuesta debe incluir análisis estadísticos históricos y parámetros de *backtesting*:
 
 - **Medias Móviles (SMA y EMA):** Análisis de Medias Móviles Simples (por ejemplo, de 50 y 200 días) y Medias Móviles Exponenciales para determinar macro-tendencias y zonas de impulso de entrada y salida.
-- **Backtesting bajo Regímenes de Mercado:** Simulación del comportamiento histórico del activo frente a cambios macroeconómicos o de mercado específicos. Por ejemplo, si un activo muestra una alta correlación con el S&P 500, la RIP debe modelar cómo se comportó el activo durante las caídas (*drawdowns*) o repuntes históricos del S&P 500 en horizontes de 30, 90 y 365 dias.
+- **Backtesting bajo Regímenes de Mercado:** Simulación del comportamiento histórico del activo frente a cambios macroeconómicos o de mercado específicos. Por ejemplo, si un activo muestra una alta correlación con el S&P 500, la RIP debe modelar cómo se comportó el activo durante las caídas (*drawdowns*) o repuntes históricos del S&P 500 en horizontes de 30, 90 y 365 días.
 - **Matrices de Volatilidad y Correlación:** Cálculo histórico de la beta en relación con índices de referencia y métricas de duración de las caídas.
+
+## Modelado Probabilístico, Simulaciones y Pruebas de Estrés
+
+Para superar las limitaciones inherentes a los modelos deterministas tradicionales, toda RIP de carácter avanzado debe incorporar modelado probabilístico y análisis de sensibilidad estocástica dentro de sus archivos de análisis adjuntos (`.ipynb`):
+
+- **Simulaciones de Monte Carlo:** Ejecución de un mínimo de 10,000 iteraciones independientes para estimar la distribución de probabilidad del rendimiento futuro del activo, aleatorizando variables críticas y obteniendo intervalos de confianza para el CAGR esperado y el riesgo de ruina.
+- **Análisis de Sensibilidad Multivariable:** Matrices de sensibilidad cruzada para evaluar cómo reacciona el valor intrínseco o el precio objetivo ante variaciones simultáneas de dos factores macroeconómicos u operativos clave (ej. $\pm 20\%$ en la tasa de descuento frente al margen EBIT).
+- **Pruebas de Estrés (Stress Testing):** Modelado del comportamiento de la tesis frente a choques sistémicos extremos y crisis históricas de alta correlación.
 
 ## Objetivos, Horizontes Temporales, Métricas de Rendimiento y Gestión de Riesgo Operativo
 
@@ -49,22 +58,18 @@ Toda propuesta de inversión debe definir claramente los siguientes parámetros 
 
 ## Ciclo de Vida de una RIP
 
-**Idea** - Concepto previo al borrador compartido en canales comunitarios o foros.
-
-**Draft (Borrador)** - La primera etapa formalmente rastreada. El autor de la RIP abre un *Pull Request* con la especificación en `.md`, el `.pdf` de soporte y los archivos de análisis en `.ipynb`.
-
-**Review (Revisión)** - Analistas y estrategas de la comunidad revisan por pares las hipótesis del DCF, la lógica del *backtesting*, los objetivos de precio, las métricas de CAGR y *drawdown*, los plazos y los parámetros de riesgo.
-
-**Last Call (Última Llamada)** - Ventana de revisión final de 14 días para la propuesta refinada antes de pasar a una votación de gobernanza vinculante.
-
-**Votación (Snapshot)** - La propuesta se envía al espacio de [Snapshot](https://snapshot.org/#/s:rubyfoundation.eth) bajo la regla *un token, un voto*.
-
-**Aprobada / Ejecutada** - Una vez aprobada, la tesis se integra en el flujo de datos del panel (*dashboard*) y se ejecuta a través de la estructura de tesorería designada.
+- **Idea:** Concepto previo al borrador compartido en canales comunitarios o foros.
+- **Draft (Borrador):** La primera etapa formalmente rastreada. El autor de la RIP abre un *Pull Request* con la especificación en `.md`, el documento de soporte y los archivos de análisis en `.ipynb`.
+- **Review (Revisión):** Analistas y estrategas de la comunidad revisan por pares las hipótesis del DCF, la lógica del *backtesting*, los objetivos de precio, las métricas de CAGR y *drawdown*, los plazos y los parámetros de riesgo.
+- **Last Call (Última Llamada):** Ventana de revisión final de 14 días para la propuesta refinada antes de pasar a una votación de gobernanza vinculante.
+- **Votación (Snapshot):** La propuesta se envía al espacio de [Snapshot](https://snapshot.org) bajo la regla *un token, un voto*.
+- **Aprobada / Ejecutada:** Una vez aprobada, la tesis se integra en el flujo de datos del panel (*dashboard*) y se ejecuta a través de la estructura de tesorería designada.
 
 ## ¿Qué contiene una RIP exitosa?
 
-- **Preámbulo:** Metadatos de cabecera (número de RIP, título, autor, estado, fecha de creación).
+- **Preámbulo y Metadatos:** Metadatos de cabecera (número de RIP, título, autor, estado, fecha de creación).
 - **Resumen (Abstract):** Sumario ejecutivo conciso de la tesis de inversión.
-- **Modelos de Valoración:** Ejecución detallada del DCF y filtrado por múltiplos multivariable.
-- **Datos Estadísticos y de Backtesting:** Indicadores SMA/EMA, pruebas de correlación histórica, CAGR esperado y máximo *drawdown* proyectado.
+- **Modelos de Valoración:** Ejecución detallada del DCF, filtrado por múltiplos multivariable y valoración basada en activos.
+- **Datos Estadísticos y de Backtesting:** Indicadores SMA/EMA, pruebas de correlación histórica, matrices de volatilidad, CAGR esperado y máximo *drawdown* proyectado.
+- **Modelado Probabilístico:** Simulaciones de Monte Carlo y análisis de sensibilidad multivariable.
 - **Objetivos y Gestión de Riesgos:** Precio objetivo, plazo temporal (máximo 2 años), reglas de *stop-loss* y *stop-win* sujetas a revisión comunitaria.
